@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import "server-only";
-import { prisma } from "../../globals/db";
-import { zVersion } from "../app/type";
+import { prisma } from "@/globals/db";
+import { zVersion } from "@/src/app/type";
 
 const Header: React.FC = () => {
   const title = 'Awesome Note App'

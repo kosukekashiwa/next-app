@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import coverPic from '../../public/vercel.svg';
+import coverPic from '@/public/vercel.svg';
 
 export default function Home() {
   return (
