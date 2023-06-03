@@ -3,6 +3,7 @@
         "dbaeumer.vscode-eslint", 
         "donjayamanne.githistory",
         "csstools.postcss",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "Prisma.prisma"
       ]
 }
