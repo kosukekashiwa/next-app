@@ -1,4 +1,5 @@
 import "./globals.css";
+import Header from "@/components/Header";
 import { Noto_Sans_JP } from "next/font/google";
 
 /** <head>部の設定. */
@@ -28,7 +29,10 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
-      <body className={NotoSansJP.className}>{children}</body>
+      <body className={NotoSansJP.className}>
+        <Header/>
+          {children}
+        </body>
     </html>
   );
 }
