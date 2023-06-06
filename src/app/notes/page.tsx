@@ -1,12 +1,11 @@
 import ErrorBoundary from '@/src/components/ErrorBoundary';
 import FetchError from '@/src/components/FetchError';
 import Loading from '@/src/components/Loading';
-import { apiUrl } from "@/src/constants/api";
 import Link from 'next/link';
 import { Suspense } from 'react';
 import "server-only";
 import NoteList from './NoteList';
-import { zNotes } from "./type";
+import { getNotes } from '@/src/app/notes/getNotes';
 
 export const revalidate = 0;
 
@@ -32,10 +31,3 @@ export default async function Page() {
     </main>
   )
 }
-
-export const getNotes = async () => {
-  const res = await fetch(`${apiUrl}/notes`, { cache: 'no-store' });
-  const data = await res.json();
-  const notes = zNotes.parse(data);
-  return notes;
-};
