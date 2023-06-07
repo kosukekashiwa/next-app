@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends":[
+    "plugin:@typescripteslint/recommended",
+    "prettier",
+    "next/core-web-vitals"
+  ],
+  "parser":"@typescripteslint/parser",
+  "plugins":["@typescripteslint"],
+  "rules":{
+    "@typescripteslint/noexplicitany":["error"],
+    "@typescripteslint/explicitfunctionreturntype":["error"]
+  }
 }
