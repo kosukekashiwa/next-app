@@ -1,16 +1,16 @@
-import ErrorBoundary from "@/src/components/ErrorBoundary";
-import FetchError from "@/src/components/FetchError";
-import Loading from "@/src/components/Loading";
-import Link from "next/link";
-import { Suspense } from "react";
-import "server-only";
-import NoteList from "./NoteList";
-import { getNotes } from "@/src/app/notes/getNotes";
+import ErrorBoundary from '@/src/components/ErrorBoundary';
+import FetchError from '@/src/components/FetchError';
+import Loading from '@/src/components/Loading';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import 'server-only';
+import NoteList from './NoteList';
+import { getNotes } from '@/src/app/notes/getNotes';
 
 export const revalidate = 0;
 
 export const metadata = {
-  title: "List Notes",
+  title: 'List Notes',
 };
 
 export default async function Page() {

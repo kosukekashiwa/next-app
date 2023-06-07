@@ -1,41 +1,38 @@
-"use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
-import { z } from "zod";
+'use client';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useCallback, useState } from 'react';
+import { z } from 'zod';
 
 const NewNote: React.FC = () => {
   const router = useRouter();
 
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
 
   const createNote = useCallback(async () => {
     const res = await fetch(`/api/notes`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({ title, body }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
     if (res.ok) {
       const id = z.number().parse(await res.json());
-      alert("Note created");
+      alert('Note created');
       router.push(`/notes`);
       router.refresh();
     } else {
-      alert("Note failed to create");
+      alert('Note failed to create');
     }
   }, [body, router, title]);
 
   return (
     <div className="flex flex-col bg-gray-100 rounded-lg relative p-5 gap-2.5">
       <div className="sm:col-span-2">
-        <label
-          htmlFor="title"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="title" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           Title
         </label>
         <input
@@ -47,10 +44,7 @@ const NewNote: React.FC = () => {
       </div>
 
       <div className="sm:col-span-2">
-        <label
-          htmlFor="body"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="body" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           Body
         </label>
         <textarea

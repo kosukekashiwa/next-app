@@ -1,12 +1,12 @@
-import { prisma } from "@/globals/db";
-import "server-only";
-import { zSettings } from "../type";
-import EditSettings from "./EditSettings";
+import { prisma } from '@/globals/db';
+import 'server-only';
+import { zSettings } from '../type';
+import EditSettings from './EditSettings';
 
 export const revalidate = 0;
 
 export const metadata = {
-  title: "Settings",
+  title: 'Settings',
 };
 
 export default async function Page() {

@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useCallback } from "react";
-import { Note } from "../type";
+'use client';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useCallback } from 'react';
+import { Note } from '../type';
 
 type NoteProps = {
   item: Note;
@@ -12,25 +12,23 @@ const Note: React.FC<NoteProps> = ({ item }) => {
   const router = useRouter();
   const deleteNote = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     if (res.ok) {
-      alert("Note deleted");
+      alert('Note deleted');
       router.push(`/notes`);
       router.refresh();
     } else {
-      alert("Note failed to delete");
+      alert('Note failed to delete');
     }
   }, [item.id, router]);
 
   return (
     <div className="flex flex-col bg-gray-100 rounded-lg relative p-5 gap-2.5">
-      <h3 className="text-pink-500 text-lg md:text-xl font-semibold break-all">
-        {item.title}
-      </h3>
+      <h3 className="text-pink-500 text-lg md:text-xl font-semibold break-all">{item.title}</h3>
       <p className="text-gray-500 break-all">{item.body}</p>
 
       <div className="flex flex-col sm:flex-row sm:justify-end gap-2.5">

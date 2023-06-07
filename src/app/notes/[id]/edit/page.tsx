@@ -1,14 +1,10 @@
-import Link from "next/link";
-import { Metadata } from "next/types";
-import { getNote } from "../getNote";
-import EditNote from "./EditNote";
+import Link from 'next/link';
+import { Metadata } from 'next/types';
+import { getNote } from '../getNote';
+import EditNote from './EditNote';
 export const revalidate = 0;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const note = await getNote(params.id);
   return { title: note.title };
 }

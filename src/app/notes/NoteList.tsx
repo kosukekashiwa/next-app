@@ -1,7 +1,7 @@
-"use client";
-import Link from "next/link";
-import useSWR from "swr";
-import { Note, zNotes } from "@/src/app/notes/type";
+'use client';
+import Link from 'next/link';
+import useSWR from 'swr';
+import { Note, zNotes } from '@/src/app/notes/type';
 
 type NoteListProps = {
   initialState: Note[];
@@ -16,7 +16,7 @@ const fetcher = (url: string) =>
   });
 
 const NoteList: React.FC<NoteListProps> = ({ initialState }) => {
-  const { data } = useSWR("/api/notes", fetcher, {
+  const { data } = useSWR('/api/notes', fetcher, {
     suspense: true,
     fallbackData: initialState,
   });

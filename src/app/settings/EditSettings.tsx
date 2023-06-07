@@ -1,7 +1,7 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
-import { Settings } from "../type";
+'use client';
+import { useRouter } from 'next/navigation';
+import { useCallback, useState } from 'react';
+import { Settings } from '../type';
 type Props = {
   value: Settings;
 };
@@ -12,27 +12,24 @@ const EditSettings: React.FC<Props> = ({ value }) => {
   const [tos, setTos] = useState(value.tos);
   const updateSettings = useCallback(async () => {
     const res = await fetch(`/api/settings`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify({ version: version, faq: faq, tos: tos }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     if (res.ok) {
-      alert("Settings updated");
+      alert('Settings updated');
       router.refresh();
     } else {
-      alert("Settings failed to update");
+      alert('Settings failed to update');
     }
   }, [faq, router, tos, version]);
 
   return (
     <div className="flex flex-col bg-gray-100 rounded-lg relative p-5 gap-2.5">
       <div className="sm:col-span-2">
-        <label
-          htmlFor="version"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="version" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           Version
         </label>
         <input
@@ -44,10 +41,7 @@ const EditSettings: React.FC<Props> = ({ value }) => {
       </div>
 
       <div className="sm:col-span-2">
-        <label
-          htmlFor="faq"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="faq" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           FAQ
         </label>
         <textarea
@@ -59,10 +53,7 @@ const EditSettings: React.FC<Props> = ({ value }) => {
       </div>
 
       <div className="sm:col-span-2">
-        <label
-          htmlFor="tos"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="tos" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           TOS
         </label>
         <textarea

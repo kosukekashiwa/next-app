@@ -1,12 +1,9 @@
-"use client";
-import React, { ReactNode } from "react";
+'use client';
+import React, { ReactNode } from 'react';
 
 type ErrorBoundaryProps = { fallback: ReactNode; children: ReactNode };
 
-class ErrorBoundary extends React.Component<
-  ErrorBoundaryProps,
-  { hasError: boolean }
-> {
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, { hasError: boolean }> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = {

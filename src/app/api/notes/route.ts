@@ -1,8 +1,8 @@
-import { prisma } from "@/globals/db";
-import { zUpsertNote } from "@/src/app/notes/type";
-import { NextRequest, NextResponse } from "next/server";
+import { prisma } from '@/globals/db';
+import { zUpsertNote } from '@/src/app/notes/type';
+import { NextRequest, NextResponse } from 'next/server';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const notes = await prisma.note.findMany();

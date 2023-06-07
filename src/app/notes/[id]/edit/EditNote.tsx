@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
-import { Note } from "@/src/app/notes/type";
+'use client';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useCallback, useState } from 'react';
+import { Note } from '@/src/app/notes/type';
 
 type Props = {
   item: Note;
@@ -14,28 +14,25 @@ const EditNote: React.FC<Props> = ({ item }) => {
   const [body, setBody] = useState(item.body);
   const updateNote = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify({ title, body }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     if (res.ok) {
-      alert("Note updated");
+      alert('Note updated');
       router.push(`/notes/${item.id}`);
       router.refresh();
     } else {
-      alert("Note failed to update");
+      alert('Note failed to update');
     }
   }, [body, item.id, router, title]);
 
   return (
     <div className="flex flex-col bg-gray-100 rounded-lg relative p-5 gap-2.5">
       <div className="sm:col-span-2">
-        <label
-          htmlFor="title"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="title" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           Title
         </label>
         <input
@@ -47,10 +44,7 @@ const EditNote: React.FC<Props> = ({ item }) => {
       </div>
 
       <div className="sm:col-span-2">
-        <label
-          htmlFor="body"
-          className="inline-block text-gray-800 text-sm sm:text-base mb-2"
-        >
+        <label htmlFor="body" className="inline-block text-gray-800 text-sm sm:text-base mb-2">
           Body
         </label>
         <textarea

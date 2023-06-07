@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import coverPic from "@/public/vercel.svg";
+import Image from 'next/image';
+import Link from 'next/link';
+import coverPic from '@/public/vercel.svg';
 
 export default function Home() {
   return (
@@ -18,8 +18,7 @@ export default function Home() {
               </h1>
 
               <p className="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-4 md:mb-6">
-                Learn about the new features of Next.js 13 through building a
-                note application.
+                Learn about the new features of Next.js 13 through building a note application.
               </p>
               <p className="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">
                 Front-end development will be more fun.

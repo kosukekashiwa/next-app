@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -9,15 +9,15 @@ async function main() {
   // seeding
   const metadatas: Prisma.MetadataCreateInput[] = [
     {
-      key: "version",
-      value: "13.2.1",
+      key: 'version',
+      value: '13.2.1',
     },
     {
-      key: "faq",
+      key: 'faq',
       value: faq,
     },
     {
-      key: "tos",
+      key: 'tos',
       value: tos,
     },
   ];
@@ -29,20 +29,20 @@ async function main() {
 
   const notes: Prisma.NoteCreateInput[] = [
     {
-      title: "First note",
-      body: "This is the first note.",
+      title: 'First note',
+      body: 'This is the first note.',
     },
     {
-      title: "Second note",
-      body: "This is the second note.",
+      title: 'Second note',
+      body: 'This is the second note.',
     },
     {
-      title: "Third note",
-      body: "This is the third note.",
+      title: 'Third note',
+      body: 'This is the third note.',
     },
     {
-      title: "Fourth note",
-      body: "This is the fourth note.",
+      title: 'Fourth note',
+      body: 'This is the fourth note.',
     },
   ];
   for (const note of notes) {

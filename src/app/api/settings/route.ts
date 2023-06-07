@@ -1,6 +1,6 @@
-import { zSettings } from "@/src/app/type";
-import { prisma } from "@/globals/db";
-import { NextRequest, NextResponse } from "next/server";
+import { zSettings } from '@/src/app/type';
+import { prisma } from '@/globals/db';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function PUT(req: NextRequest) {
   const data = await req.json();
@@ -8,15 +8,15 @@ export async function PUT(req: NextRequest) {
   // トランザクションを使って、複数のデータを一度に更新する
   await prisma.$transaction([
     prisma.metadata.update({
-      where: { key: "version" },
+      where: { key: 'version' },
       data: { value: parcedData.version },
     }),
     prisma.metadata.update({
-      where: { key: "faq" },
+      where: { key: 'faq' },
       data: { value: parcedData.faq },
     }),
     prisma.metadata.update({
-      where: { key: "tos" },
+      where: { key: 'tos' },
       data: { value: parcedData.tos },
     }),
   ]);

@@ -1,8 +1,8 @@
-import NewNote from "@/src/app/notes/new/NewNote";
-import Link from "next/link";
+import NewNote from '@/src/app/notes/new/NewNote';
+import Link from 'next/link';
 
 export const metadata = {
-  title: "New Note",
+  title: 'New Note',
 };
 
 export default async function Page() {
