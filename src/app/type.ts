@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const zVersion = z.string().regex(/^\d+\.\d+\.\d+$/);
 

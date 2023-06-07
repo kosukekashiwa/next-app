@@ -30,9 +30,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
       <body className={NotoSansJP.className}>
-        <Header/>
-          {children}
-        </body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

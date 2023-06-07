@@ -1,9 +1,9 @@
 {
-    "recommendations": [
-        "dbaeumer.vscode-eslint", 
-        "donjayamanne.githistory",
-        "csstools.postcss",
-        "bradlc.vscode-tailwindcss",
-        "Prisma.prisma"
-      ]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.githistory",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss",
+    "Prisma.prisma"
+  ]
 }

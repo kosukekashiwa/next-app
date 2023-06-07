@@ -20,5 +20,5 @@ export async function PUT(req: NextRequest) {
       data: { value: parcedData.tos },
     }),
   ]);
-  return new NextResponse(null, { status: 204 })
+  return new NextResponse(null, { status: 204 });
 }

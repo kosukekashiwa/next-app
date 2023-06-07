@@ -1,6 +1,6 @@
-import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 async function main() {
   // delete all
@@ -23,7 +23,7 @@ async function main() {
   ];
   for (const metadata of metadatas) {
     await prisma.metadata.create({
-      data: metadata
+      data: metadata,
     });
   }
 
@@ -47,19 +47,19 @@ async function main() {
   ];
   for (const note of notes) {
     await prisma.note.create({
-      data: note
-    })
+      data: note,
+    });
   }
 }
 
 main()
   .then(async () => {
-    await prisma.$disconnect()
+    await prisma.$disconnect();
   })
   .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
   });
 
 const faq = `
@@ -86,7 +86,7 @@ A: If you forget your password, you can reset it by clicking the "Forgot Passwor
 
 Q: Do you offer a mobile app?
 A: Yes, we offer a mobile app for both iOS and Android devices. You can download the app from the App Store or Google Play.
-`
+`;
 const tos = `
 Welcome to our website. These Terms of Service ("TOS") govern your use of our website, including any content, functionality, and services offered on or through the website. By using our website, you accept and agree to be bound by these TOS. If you do not agree with these TOS, you may not use our website.
 
