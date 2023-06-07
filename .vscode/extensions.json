@@ -4,6 +4,7 @@
     "donjayamanne.githistory",
     "csstools.postcss",
     "bradlc.vscode-tailwindcss",
-    "Prisma.prisma"
+    "Prisma.prisma",
+    "esbenp.prettier-vscode"
   ]
 }
