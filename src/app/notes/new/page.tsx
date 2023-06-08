@@ -10,11 +10,11 @@ export default async function Page() {
     <main className="mx-2 sm:mx-4">
       <Link
         href={`/notes`}
-        className="inline-block focus-visible:ring ring-pink-300 text-gray-500 hover:text-pink-500 active:text-pink-600 text-s md:text-base font-semibold rounded-lg outline-none transition duration-100"
+        className="text-s inline-block rounded-lg font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:text-pink-500 focus-visible:ring active:text-pink-600 md:text-base"
       >
         ← back
       </Link>
-      <h2 className="my-4 text-gray-400 text-xs">New Note</h2>
+      <h2 className="my-4 text-xs text-gray-400">New Note</h2>
       <NewNote />
     </main>
   );

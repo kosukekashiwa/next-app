@@ -22,7 +22,7 @@ const NoteList: React.FC<NoteListProps> = ({ initialState }) => {
   });
 
   return (
-    <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-y-10">
+    <div className="grid gap-8 sm:grid-cols-2 sm:gap-y-10 xl:grid-cols-3">
       {data.map((note) => (
         <NoteItem key={note.id} item={note} />
       ))}
@@ -36,12 +36,12 @@ type NoteItemProps = {
 
 const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
   return (
-    <div className="bg-gray-100 rounded-lg relative p-5 pt-8">
+    <div className="relative rounded-lg bg-gray-100 p-5 pt-8">
       <Link href={`/notes/${item.id}/edit`} className="absolute -top-4 left-4">
-        <span className="w-8 h-8 inline-flex justify-center items-center bg-pink-500 hover:bg-pink-700 text-white rounded-full">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
+            className="h-5 w-5"
             viewBox="0 0 25 25"
             fill="currentColor"
           >
@@ -50,11 +50,11 @@ const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
         </span>
       </Link>
       <Link href={`/notes/${item.id}`} prefetch={false}>
-        <h3 className="text-pink-500 hover:text-pink-700 text-lg md:text-xl font-semibold mb-3 break-all underline underline-offset-2">
+        <h3 className="mb-3 break-all text-lg font-semibold text-pink-500 underline underline-offset-2 hover:text-pink-700 md:text-xl">
           {item.title}
         </h3>
       </Link>
-      <p className="text-gray-500 break-all">{item.body}</p>
+      <p className="break-all text-gray-500">{item.body}</p>
     </div>
   );
 };

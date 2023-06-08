@@ -27,20 +27,20 @@ const Note: React.FC<NoteProps> = ({ item }) => {
   }, [item.id, router]);
 
   return (
-    <div className="flex flex-col bg-gray-100 rounded-lg relative p-5 gap-2.5">
-      <h3 className="text-pink-500 text-lg md:text-xl font-semibold break-all">{item.title}</h3>
-      <p className="text-gray-500 break-all">{item.body}</p>
+    <div className="relative flex flex-col gap-2.5 rounded-lg bg-gray-100 p-5">
+      <h3 className="break-all text-lg font-semibold text-pink-500 md:text-xl">{item.title}</h3>
+      <p className="break-all text-gray-500">{item.body}</p>
 
-      <div className="flex flex-col sm:flex-row sm:justify-end gap-2.5">
+      <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
         <Link
           href={`/notes/${item.id}/edit`}
-          className="inline-block bg-pink-500 hover:bg-pink-600 active:bg-pink-700 focus-visible:ring ring-pink-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-2"
+          className="inline-block rounded-lg bg-pink-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base"
         >
           Edit
         </Link>
         <button
           onClick={deleteNote}
-          className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-pink-300 text-red-500 active:text-red-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-2"
+          className="inline-block rounded-lg bg-gray-200 px-8 py-2 text-center text-sm font-semibold text-red-500 outline-none ring-pink-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-red-700 md:text-base"
         >
           Delete
         </button>

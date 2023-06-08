@@ -8,12 +8,12 @@ const Header: React.FC = () => {
   const title = 'Awesome Note App';
   return (
     <div className="bg-white lg:pb-6">
-      <div className="max-w-screen-2xl px-2 md:px-4 mx-auto">
-        <header className="flex justify-between items-center py-4">
+      <div className="mx-auto max-w-screen-2xl px-2 md:px-4">
+        <header className="flex items-center justify-between py-4">
           {/* トップページへのリンク */}
           <Link
             href="/"
-            className="inline-flex items-center text-black-800 text-xl font-bold gap-2.5"
+            className="text-black-800 inline-flex items-center gap-2.5 text-xl font-bold"
             aria-label="logo"
           >
             <svg height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80">
@@ -29,29 +29,29 @@ const Header: React.FC = () => {
             {title}
           </Link>
           {/* 画面幅が768px未満の場合は非表示 */}
-          <nav className="hidden md:flex gap-12">
+          <nav className="hidden gap-12 md:flex">
             <Link
               href="/notes"
-              className="text-gray-600 hover:text-pink-500 active:text-pink-700 text-lg font-semibold transition duration-100"
+              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-pink-500 active:text-pink-700"
             >
               Memo
             </Link>
             <Link
               href="/help/faq"
-              className="text-gray-600 hover:text-pink-500 active:text-pink-700 text-lg font-semibold transition duration-100"
+              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-pink-500 active:text-pink-700"
             >
               FAQ
             </Link>
             <Link
               href="/settings"
-              className="text-gray-600 hover:text-pink-500 active:text-pink-700 text-lg font-semibold transition duration-100"
+              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-pink-500 active:text-pink-700"
             >
               Setting
             </Link>
           </nav>
 
           <div>
-            <span className="inline-block focus-visible:ring ring-pink-300 text-gray-500 hover:text-pink-500 active:text-pink-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-2 py-3">
+            <span className="inline-block rounded-lg px-2 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:text-pink-500 focus-visible:ring active:text-pink-600 md:text-base">
               <Suspense fallback={'loading...'}>
                 {/* 非同期のサーバーコンポーネント */}
                 <Version />

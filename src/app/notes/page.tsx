@@ -17,14 +17,14 @@ export default async function Page() {
   const notes = await getNotes();
 
   return (
-    <main className="mx-2 sm:mx-4 relative">
+    <main className="relative mx-2 sm:mx-4">
       <Link
         href="/notes/new"
-        className="absolute top-0 right-2 z-10 text-white bg-pink-500 hover:bg-pink-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2"
+        className="absolute right-2 top-0 z-10 mr-2 inline-flex items-center rounded-full bg-pink-500 p-2.5 text-center text-sm font-medium text-white hover:bg-pink-700"
       >
         <svg
           aria-hidden="true"
-          className="w-6 h-6"
+          className="h-6 w-6"
           fill="currentColor"
           viewBox="4 4 8 8"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ export default async function Page() {
         </svg>
         <span className="sr-only">New Note</span>
       </Link>
-      <h2 className="mb-6 text-gray-400 text-xs">List Notes</h2>
+      <h2 className="mb-6 text-xs text-gray-400">List Notes</h2>
       <ErrorBoundary fallback={<FetchError />}>
         <Suspense fallback={<Loading />}>
           <NoteList initialState={notes} />
