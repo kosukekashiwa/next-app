@@ -19,5 +19,5 @@ pnpm dev
 - [x] zod
 - [x] ESLint
 - [x] Prettier
-- [] Jest
-- [] Storybook
+- [ ] Jest
+- [ ] Storybook
