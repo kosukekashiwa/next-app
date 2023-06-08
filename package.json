@@ -37,6 +37,7 @@
     "eslint-config-next": "^13.4.4",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "prisma": "^4.15.0",
     "server-only": "^0.0.1",
     "ts-node": "^10.9.1",
