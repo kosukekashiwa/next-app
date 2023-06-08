@@ -10,8 +10,10 @@ type Props = {
 
 const EditNote: React.FC<Props> = ({ item }) => {
   const router = useRouter();
+
   const [title, setTitle] = useState(item.title);
   const [body, setBody] = useState(item.body);
+
   const updateNote = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
       method: 'PUT',
@@ -20,6 +22,7 @@ const EditNote: React.FC<Props> = ({ item }) => {
         'Content-Type': 'application/json',
       },
     });
+
     if (res.ok) {
       alert('Note updated');
       router.push(`/notes/${item.id}`);

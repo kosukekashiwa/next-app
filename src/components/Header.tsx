@@ -6,11 +6,11 @@ import { zVersion } from '@/src/app/type';
 
 const Header: React.FC = () => {
   const title = 'Awesome Note App';
+
   return (
     <div className="bg-white lg:pb-6">
       <div className="mx-auto max-w-screen-2xl px-2 md:px-4">
         <header className="flex items-center justify-between py-4">
-          {/* トップページへのリンク */}
           <Link
             href="/"
             className="text-black-800 inline-flex items-center gap-2.5 text-xl font-bold"
@@ -49,7 +49,6 @@ const Header: React.FC = () => {
               Setting
             </Link>
           </nav>
-
           <div>
             <span className="inline-block rounded-lg px-2 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:text-pink-500 focus-visible:ring active:text-pink-600 md:text-base">
               <Suspense fallback={'loading...'}>

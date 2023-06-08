@@ -6,11 +6,13 @@ export const revalidate = 0;
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const note = await getNote(params.id);
+
   return { title: note.title };
 }
 
 export default async function Page({ params }: { params: { id: string } }) {
   const note = await getNote(params.id);
+
   return (
     <main className="mx-2 sm:mx-4">
       <Link

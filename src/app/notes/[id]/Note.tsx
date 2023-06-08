@@ -10,6 +10,7 @@ type NoteProps = {
 
 const Note: React.FC<NoteProps> = ({ item }) => {
   const router = useRouter();
+
   const deleteNote = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
       method: 'DELETE',
@@ -17,6 +18,7 @@ const Note: React.FC<NoteProps> = ({ item }) => {
         'Content-Type': 'application/json',
       },
     });
+
     if (res.ok) {
       alert('Note deleted');
       router.push(`/notes`);
