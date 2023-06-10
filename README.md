@@ -1,3 +1,5 @@
+# Next App
+
 ## Getting Started
 
 First, run the development server:
@@ -10,6 +12,26 @@ yarn dev
 pnpm dev
 ```
 
+## Prisma
+
+Migration:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+Prisma Studio:
+
+```bash
+npx prisma studio
+```
+
+Create data:
+
+```bash
+npx prisma db seed
+```
+
 ## Library
 
 - [x] React
@@ -20,4 +42,6 @@ pnpm dev
 - [x] ESLint
 - [x] Prettier
 - [ ] Jest
+- [ ] MSW
 - [ ] Storybook
+- [ ] Radix UI
