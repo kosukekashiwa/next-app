@@ -3,5 +3,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderWhitespace": "all",
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on"
 }
