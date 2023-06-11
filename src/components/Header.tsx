@@ -8,12 +8,12 @@ const Header: React.FC = () => {
   const title = 'Awesome Note App';
 
   return (
-    <div className="bg-white lg:pb-6">
+    <div className="bg-gwhite lg:pb-6">
       <div className="mx-auto max-w-screen-2xl px-2 md:px-4">
         <header className="flex items-center justify-between py-4">
           <Link
             href="/"
-            className="text-black-800 inline-flex items-center gap-2.5 text-xl font-bold"
+            className="inline-flex items-center gap-2.5 text-xl font-bold text-gray-100"
             aria-label="logo"
           >
             <svg height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80">
@@ -32,25 +32,25 @@ const Header: React.FC = () => {
           <nav className="hidden gap-12 md:flex">
             <Link
               href="/notes"
-              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-pink-500 active:text-pink-700"
+              className="text-lg font-semibold text-gray-70 transition duration-100 hover:text-red-60 active:text-red-80"
             >
               Memo
             </Link>
             <Link
               href="/help/faq"
-              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-pink-500 active:text-pink-700"
+              className="text-lg font-semibold text-gray-70 transition duration-100 hover:text-red-60 active:text-red-80"
             >
               FAQ
             </Link>
             <Link
               href="/settings"
-              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-pink-500 active:text-pink-700"
+              className="text-lg font-semibold text-gray-70 transition duration-100 hover:text-red-60 active:text-red-80"
             >
               Setting
             </Link>
           </nav>
           <div>
-            <span className="inline-block rounded-lg px-2 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:text-pink-500 focus-visible:ring active:text-pink-600 md:text-base">
+            <span className="inline-block rounded-lg px-2 py-3 text-center text-sm font-semibold text-gray-60 outline-none ring-red-40 transition duration-100 hover:text-red-60 focus-visible:ring active:text-red-70 md:text-base">
               <Suspense fallback={'loading...'}>
                 {/* 非同期のサーバーコンポーネント */}
                 <Version />

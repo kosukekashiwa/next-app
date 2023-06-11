@@ -20,7 +20,7 @@ export default async function Page() {
     <main className="relative mx-2 sm:mx-4">
       <Link
         href="/notes/new"
-        className="absolute right-2 top-0 z-10 mr-2 inline-flex items-center rounded-full bg-pink-500 p-2.5 text-center text-sm font-medium text-white hover:bg-pink-700"
+        className="absolute right-2 top-0 z-10 mr-2 inline-flex items-center rounded-full bg-red-60 p-2.5 text-center text-sm font-medium text-white hover:bg-red-80"
       >
         <svg
           aria-hidden="true"
@@ -37,7 +37,7 @@ export default async function Page() {
         </svg>
         <span className="sr-only">New Note</span>
       </Link>
-      <h2 className="mb-6 text-xs text-gray-400">List Notes</h2>
+      <h2 className="mb-6 text-xs text-gray-50">List Notes</h2>
       <ErrorBoundary fallback={<FetchError />}>
         <Suspense fallback={<Loading />}>
           <NoteList initialState={notes} />

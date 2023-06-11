@@ -30,9 +30,9 @@ const Note: React.FC<NoteProps> = ({ item }) => {
   }, [item.id, router]);
 
   return (
-    <div className="relative flex flex-col gap-2.5 rounded-lg bg-gray-100 p-5">
-      <h3 className="break-all text-lg font-semibold text-pink-500 md:text-xl">{item.title}</h3>
-      <p className="break-all text-gray-500">{item.body}</p>
+    <div className="relative flex flex-col gap-2.5 rounded-lg bg-gray-10 p-5">
+      <h3 className="break-all text-lg font-semibold text-red-60 md:text-xl">{item.title}</h3>
+      <p className="break-all text-gray-60">{item.body}</p>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
         <PrimaryNextLink href={`/notes/${item.id}/edit`}>Edit</PrimaryNextLink>

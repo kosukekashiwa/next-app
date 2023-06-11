@@ -36,9 +36,9 @@ type NoteItemProps = {
 
 const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
   return (
-    <div className="relative rounded-lg bg-gray-100 p-5 pt-8">
+    <div className="relative rounded-lg bg-gray-10 p-5 pt-8">
       <Link href={`/notes/${item.id}/edit`} className="absolute -top-4 left-4">
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-700">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-red-60 text-white hover:bg-red-80">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -50,11 +50,11 @@ const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
         </span>
       </Link>
       <Link href={`/notes/${item.id}`} prefetch={false}>
-        <h3 className="mb-3 break-all text-lg font-semibold text-pink-500 underline underline-offset-2 hover:text-pink-700 md:text-xl">
+        <h3 className="mb-3 break-all text-lg font-semibold text-red-60 underline underline-offset-2 hover:text-red-80 md:text-xl">
           {item.title}
         </h3>
       </Link>
-      <p className="break-all text-gray-500">{item.body}</p>
+      <p className="break-all text-gray-100">{item.body}</p>
     </div>
   );
 };
