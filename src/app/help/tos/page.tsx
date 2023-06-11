@@ -11,7 +11,7 @@ export default async function Page() {
   return (
     <main>
       <h1 className="my-2 text-xl">Terms of Service</h1>
-      <p className="my-2 text-xs text-gray-400">The following text is a sample.</p>
+      <p className="my-2 text-xs text-gray-50">The following text is a sample.</p>
       <Nl2br>{data.value}</Nl2br>
     </main>
   );

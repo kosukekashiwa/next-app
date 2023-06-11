@@ -15,7 +15,7 @@ export default async function Page() {
 
   return (
     <main className="mx-2 sm:mx-4">
-      <h2 className="my-4 text-xs text-gray-400">Settings</h2>
+      <h2 className="my-4 text-xs text-gray-50">Settings</h2>
       <EditSettings value={settings} />
     </main>
   );

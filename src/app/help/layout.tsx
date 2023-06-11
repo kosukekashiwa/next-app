@@ -11,16 +11,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Link
           href="/help/faq"
           className={`${
-            pathname === '/help/faq' ? 'font-semibold text-pink-500' : 'font-normal text-gray-600'
-          } text-lg transition duration-100 hover:text-pink-500 active:text-pink-700`}
+            pathname === '/help/faq' ? 'font-semibold text-red-60' : 'font-normal text-gray-70'
+          } active:text-erd-80 text-lg transition duration-100 hover:text-red-60`}
         >
           FAQ
         </Link>
         <Link
           href="/help/tos"
           className={`${
-            pathname === '/help/tos' ? 'font-semibold text-pink-500' : 'font-normal text-gray-600'
-          } text-lg transition duration-100 hover:text-pink-500 active:text-pink-700`}
+            pathname === '/help/tos' ? 'font-semibold text-red-60' : 'font-normal text-gray-70'
+          } text-lg transition duration-100 hover:text-red-60 active:text-red-80`}
         >
           Terms
         </Link>

@@ -44,4 +44,4 @@ npx prisma db seed
 - [ ] Jest
 - [ ] MSW
 - [ ] Storybook
-- [ ] Radix UI
+- [x] Radix UI
