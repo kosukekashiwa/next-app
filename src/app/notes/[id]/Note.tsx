@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { Note } from '../type';
 import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
+import DestructiveButton from '@/src/components/buttons/DestructiveButton';
 
 type NoteProps = {
   item: Note;
@@ -11,7 +12,7 @@ type NoteProps = {
 const Note: React.FC<NoteProps> = ({ item }) => {
   const router = useRouter();
 
-  const deleteNote = useCallback(async () => {
+  const handleDeleteButtonClick = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
       method: 'DELETE',
       headers: {
@@ -35,12 +36,7 @@ const Note: React.FC<NoteProps> = ({ item }) => {
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
         <PrimaryNextLink href={`/notes/${item.id}/edit`}>Edit</PrimaryNextLink>
-        <button
-          onClick={deleteNote}
-          className="inline-block rounded-lg bg-gray-200 px-8 py-2 text-center text-sm font-semibold text-red-500 outline-none ring-pink-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-red-700 md:text-base"
-        >
-          Delete
-        </button>
+        <DestructiveButton onClick={handleDeleteButtonClick}>Delete</DestructiveButton>
       </div>
     </div>
   );

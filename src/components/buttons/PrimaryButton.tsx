@@ -1,5 +1,4 @@
 type PrimaryButtonProps = {
-  // type: 'primary' | 'secondary' | 'destructive';
   onClick: () => void;
   children: React.ReactNode;
 };
