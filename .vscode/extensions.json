@@ -5,6 +5,7 @@
     "csstools.postcss",
     "bradlc.vscode-tailwindcss",
     "Prisma.prisma",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "naumovs.color-highlight"
   ]
 }
