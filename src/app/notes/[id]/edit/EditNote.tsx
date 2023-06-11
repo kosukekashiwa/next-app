@@ -1,15 +1,15 @@
 'use client';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { Note } from '@/src/app/notes/type';
 import PrimaryButton from '@/src/components/buttons/PrimaryButton';
+import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
 
-type Props = {
+type EditNoteProps = {
   item: Note;
 };
 
-const EditNote: React.FC<Props> = ({ item }) => {
+const EditNote: React.FC<EditNoteProps> = ({ item }) => {
   const router = useRouter();
 
   const [title, setTitle] = useState(item.title);
@@ -60,12 +60,7 @@ const EditNote: React.FC<Props> = ({ item }) => {
       </div>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
-        <Link
-          href={`/notes/${item.id}`}
-          className="inline-block rounded-lg bg-gray-200 px-8 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-        >
-          Cancel
-        </Link>
+        <SecondaryNextLink href={`/notes/${item.id}`}>Cancel</SecondaryNextLink>
         <PrimaryButton onClick={handleSaveButtonClick}>Save</PrimaryButton>
       </div>
     </div>

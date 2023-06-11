@@ -1,6 +1,6 @@
 'use client';
 import PrimaryButton from '@/src/components/buttons/PrimaryButton';
-import Link from 'next/link';
+import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { z } from 'zod';
@@ -57,12 +57,7 @@ const NewNote: React.FC = () => {
       </div>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
-        <Link
-          href={`/notes`}
-          className="inline-block rounded-lg bg-gray-200 px-8 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-        >
-          Cancel
-        </Link>
+        <SecondaryNextLink href={`/notes`}>Cancel</SecondaryNextLink>
         <PrimaryButton onClick={handleSaveButtonClick}>Create</PrimaryButton>
       </div>
     </div>
