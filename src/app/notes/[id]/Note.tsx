@@ -1,8 +1,8 @@
 'use client';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { Note } from '../type';
+import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
 
 type NoteProps = {
   item: Note;
@@ -34,12 +34,7 @@ const Note: React.FC<NoteProps> = ({ item }) => {
       <p className="break-all text-gray-500">{item.body}</p>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
-        <Link
-          href={`/notes/${item.id}/edit`}
-          className="inline-block rounded-lg bg-pink-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base"
-        >
-          Edit
-        </Link>
+        <PrimaryNextLink href={`/notes/${item.id}/edit`}>Edit</PrimaryNextLink>
         <button
           onClick={deleteNote}
           className="inline-block rounded-lg bg-gray-200 px-8 py-2 text-center text-sm font-semibold text-red-500 outline-none ring-pink-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-red-700 md:text-base"

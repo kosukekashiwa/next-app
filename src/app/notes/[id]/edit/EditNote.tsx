@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { Note } from '@/src/app/notes/type';
+import PrimaryButton from '@/src/components/buttons/PrimaryButton';
 
 type Props = {
   item: Note;
@@ -14,7 +15,7 @@ const EditNote: React.FC<Props> = ({ item }) => {
   const [title, setTitle] = useState(item.title);
   const [body, setBody] = useState(item.body);
 
-  const updateNote = useCallback(async () => {
+  const handleSaveButtonClick = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
       method: 'PUT',
       body: JSON.stringify({ title, body }),
@@ -65,12 +66,7 @@ const EditNote: React.FC<Props> = ({ item }) => {
         >
           Cancel
         </Link>
-        <button
-          onClick={updateNote}
-          className="inline-block rounded-lg bg-pink-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base"
-        >
-          Save
-        </button>
+        <PrimaryButton onClick={handleSaveButtonClick}>Save</PrimaryButton>
       </div>
     </div>
   );

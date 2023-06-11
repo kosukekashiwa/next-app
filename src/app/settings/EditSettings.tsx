@@ -2,17 +2,20 @@
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { Settings } from '../type';
-type Props = {
+import PrimaryButton from '@/src/components/buttons/PrimaryButton';
+
+type EditSettingsProps = {
   value: Settings;
 };
-const EditSettings: React.FC<Props> = ({ value }) => {
+
+const EditSettings: React.FC<EditSettingsProps> = ({ value }) => {
   const router = useRouter();
 
   const [version, setVersion] = useState(value.version);
   const [faq, setFaq] = useState(value.faq);
   const [tos, setTos] = useState(value.tos);
 
-  const updateSettings = useCallback(async () => {
+  const handleSaveButtonClick = useCallback(async () => {
     const res = await fetch(`/api/settings`, {
       method: 'PUT',
       body: JSON.stringify({ version: version, faq: faq, tos: tos }),
@@ -68,12 +71,7 @@ const EditSettings: React.FC<Props> = ({ value }) => {
       </div>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
-        <button
-          onClick={updateSettings}
-          className="inline-block rounded-lg bg-pink-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base"
-        >
-          Save
-        </button>
+        <PrimaryButton onClick={handleSaveButtonClick}>Save</PrimaryButton>
       </div>
     </div>
   );

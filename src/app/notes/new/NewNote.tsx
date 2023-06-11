@@ -1,4 +1,5 @@
 'use client';
+import PrimaryButton from '@/src/components/buttons/PrimaryButton';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
@@ -10,7 +11,7 @@ const NewNote: React.FC = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
-  const createNote = useCallback(async () => {
+  const handleSaveButtonClick = useCallback(async () => {
     const res = await fetch(`/api/notes`, {
       method: 'POST',
       body: JSON.stringify({ title, body }),
@@ -62,12 +63,7 @@ const NewNote: React.FC = () => {
         >
           Cancel
         </Link>
-        <button
-          onClick={createNote}
-          className="inline-block rounded-lg bg-pink-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base"
-        >
-          Create
-        </button>
+        <PrimaryButton onClick={handleSaveButtonClick}>Create</PrimaryButton>
       </div>
     </div>
   );
