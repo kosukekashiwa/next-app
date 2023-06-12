@@ -6,7 +6,7 @@ type SecondaryButtonProps = {
 const SecondaryButton: React.FC<SecondaryButtonProps> = ({ onClick, children }) => {
   return (
     <button
-      className="inline-flex h-[35px] items-center justify-center rounded-[4px] bg-gray-50 px-[15px] font-medium leading-none text-gray-100 hover:bg-gray-60 focus:shadow-[0_0_0_2px] focus:shadow-gray-80 focus:outline-none"
+      className="inline-flex items-center justify-center rounded-[2px] bg-gray-30 px-[16px] py-[12px] text-base font-bold leading-none text-gray-90 outline-1 outline-offset-2 hover:bg-gray-40 focus:shadow-[0_0_0_2px] focus:shadow-white focus:outline-blue-60"
       onClick={onClick}
     >
       {children}
