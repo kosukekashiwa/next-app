@@ -22,4 +22,5 @@ body {
 
 html {
   @apply text-gray-90;
+  @apply box-border;
 }

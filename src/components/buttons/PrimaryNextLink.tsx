@@ -2,17 +2,26 @@ import Link, { LinkProps } from 'next/link';
 
 type PrimaryNextLinkProps = Pick<LinkProps, 'href'> & {
   children: React.ReactNode;
+  emphasis?: keyof typeof emphasisStyle;
 };
 
-const PrimaryNextLink: React.FC<PrimaryNextLinkProps> = ({ href, children }) => {
+const PrimaryNextLink: React.FC<PrimaryNextLinkProps> = ({ href, children, emphasis = 'bold' }) => {
   return (
-    <Link
-      href={href}
-      className="inline-flex items-center justify-center rounded-[2px] bg-blue-60 px-[16px] py-[12px] text-base font-bold leading-none text-white outline-1 outline-offset-2 hover:bg-blue-70 focus:shadow-[0_0_0_2px] focus:shadow-white focus:outline-blue-60"
-    >
+    <Link href={href} className={`${baseStyle} ${emphasisStyle[emphasis]}`}>
       {children}
     </Link>
   );
+};
+
+const baseStyle =
+  'inline-flex items-center justify-center rounded-[2px] px-[16px] py-[12px] text-base font-bold leading-none focus:border-white focus:bg-blue-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
+
+const emphasisStyle = {
+  bold: 'bg-blue-60 text-white border border-solid border-blue-60 hover:bg-blue-70 active:border-blue-80 active:bg-blue-80',
+  subtle:
+    'bg-transparent text-blue-60 border border-solid border-blue-60 hover:bg-blue-20 active:bg-blue-30 active:text-blue-60 active:border-blue-60',
+  minimal:
+    'bg-transparent text-blue-60 border border-solid border-transparent hover:bg-blue-20 active:bg-blue-30 active:text-blue-60 active:border-transparent',
 };
 
 export default PrimaryNextLink;
