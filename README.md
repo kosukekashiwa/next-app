@@ -37,7 +37,7 @@ npx prisma db seed
 - [x] React
 - [x] TypeScript
 - [x] Tailwind
-- [ ] Heroicons
+- [x] Heroicons
 - [x] Prisma
 - [x] zod
 - [x] ESLint
