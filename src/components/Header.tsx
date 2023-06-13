@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import 'server-only';
 import { prisma } from '@/globals/db';
 import { zVersion } from '@/src/app/type';
+import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
 
 const Header: React.FC = () => {
   const title = 'Awesome Note App';
@@ -30,24 +31,15 @@ const Header: React.FC = () => {
           </Link>
           {/* 画面幅が768px未満の場合は非表示 */}
           <nav className="hidden gap-12 md:flex">
-            <Link
-              href="/notes"
-              className="text-lg font-semibold text-gray-70 transition duration-100 hover:text-red-60 active:text-red-80"
-            >
+            <SecondaryNextLink href="/notes" emphasis="minimal">
               Memo
-            </Link>
-            <Link
-              href="/help/faq"
-              className="text-lg font-semibold text-gray-70 transition duration-100 hover:text-red-60 active:text-red-80"
-            >
+            </SecondaryNextLink>
+            <SecondaryNextLink href="/help/faq" emphasis="minimal">
               FAQ
-            </Link>
-            <Link
-              href="/settings"
-              className="text-lg font-semibold text-gray-70 transition duration-100 hover:text-red-60 active:text-red-80"
-            >
+            </SecondaryNextLink>
+            <SecondaryNextLink href="/settings" emphasis="minimal">
               Setting
-            </Link>
+            </SecondaryNextLink>
           </nav>
           <div>
             <span className="inline-block rounded-lg px-2 py-3 text-center text-sm font-semibold text-gray-60 outline-none ring-red-40 transition duration-100 hover:text-red-60 focus-visible:ring active:text-red-70 md:text-base">

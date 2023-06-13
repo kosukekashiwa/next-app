@@ -36,7 +36,9 @@ const Note: React.FC<NoteProps> = ({ item }) => {
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
         <PrimaryNextLink href={`/notes/${item.id}/edit`}>Edit</PrimaryNextLink>
-        <DestructiveButton onClick={handleDeleteButtonClick}>Delete</DestructiveButton>
+        <DestructiveButton onClick={handleDeleteButtonClick} emphasis="subtle">
+          Delete
+        </DestructiveButton>
       </div>
     </div>
   );
