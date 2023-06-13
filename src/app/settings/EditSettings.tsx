@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { Settings } from '../type';
 import PrimaryButton from '@/src/components/buttons/PrimaryButton';
+import Input from '@/src/components/inputs/Input';
 
 type EditSettingsProps = {
   value: Settings;
@@ -38,12 +39,7 @@ const EditSettings: React.FC<EditSettingsProps> = ({ value }) => {
         <label htmlFor="version" className="mb-2 inline-block text-sm text-gray-90 sm:text-base">
           Version
         </label>
-        <input
-          name="version"
-          className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-90 outline-none ring-red-40 transition duration-100 focus:ring"
-          value={version}
-          onChange={(e) => setVersion(e.target.value)}
-        />
+        <Input name="version" value={version} onChange={(e) => setVersion(e.target.value)} />
       </div>
 
       <div className="sm:col-span-2">

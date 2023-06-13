@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import { Note } from '@/src/app/notes/type';
 import PrimaryButton from '@/src/components/buttons/PrimaryButton';
 import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
+import Input from '@/src/components/inputs/Input';
 
 type EditNoteProps = {
   item: Note;
@@ -39,12 +40,7 @@ const EditNote: React.FC<EditNoteProps> = ({ item }) => {
         <label htmlFor="title" className="mb-2 inline-block text-sm text-gray-90 sm:text-base">
           Title
         </label>
-        <input
-          name="title"
-          className="ring-pink-300 w-full rounded border bg-gray-50 px-3 py-2 text-gray-90 outline-none transition duration-100 focus:ring"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <Input name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
       </div>
 
       <div className="sm:col-span-2">
