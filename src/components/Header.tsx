@@ -34,40 +34,11 @@ const Header: React.FC = () => {
             <SecondaryNextLink href="/notes" emphasis="minimal">
               Memo
             </SecondaryNextLink>
-            <SecondaryNextLink href="/help/faq" emphasis="minimal">
-              FAQ
-            </SecondaryNextLink>
-            <SecondaryNextLink href="/settings" emphasis="minimal">
-              Setting
-            </SecondaryNextLink>
           </nav>
-          <div>
-            <span className="inline-block rounded-lg px-2 py-3 text-center text-sm font-semibold text-gray-60 outline-none ring-red-40 transition duration-100 hover:text-red-60 focus-visible:ring active:text-red-70 md:text-base">
-              <Suspense fallback={'loading...'}>
-                {/* 非同期のサーバーコンポーネント */}
-                <Version />
-              </Suspense>
-            </span>
-          </div>
         </header>
       </div>
     </div>
   );
-};
-
-const Version: React.FC = () => {
-  return <div>{getVersion()}</div>;
-};
-
-const getVersion = async () => {
-  // versionをDBから取得
-  const metadata = await prisma.metadata.findUniqueOrThrow({
-    where: {
-      key: 'version',
-    },
-  });
-  const version = zVersion.parse(metadata.value);
-  return `v${version}`;
 };
 
 export default Header;
