@@ -5,6 +5,7 @@ import { Note } from '@/src/app/notes/type';
 import PrimaryButton from '@/src/components/buttons/PrimaryButton';
 import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
 import Input from '@/src/components/inputs/Input';
+import Textarea from '@/src/components/inputs/Textarea';
 
 type EditNoteProps = {
   item: Note;
@@ -47,12 +48,7 @@ const EditNote: React.FC<EditNoteProps> = ({ item }) => {
         <label htmlFor="body" className="mb-2 inline-block text-sm text-gray-90 sm:text-base">
           Body
         </label>
-        <textarea
-          name="body"
-          className="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-90 outline-none ring-red-40 transition duration-100 focus:ring"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
+        <Textarea name="body" value={body} onChange={(e) => setBody(e.target.value)} />
       </div>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
