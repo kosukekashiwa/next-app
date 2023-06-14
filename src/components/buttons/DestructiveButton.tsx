@@ -3,6 +3,7 @@ type DestructiveButtonProps = {
   children: React.ReactNode;
   size?: keyof typeof sizeStyle;
   emphasis?: keyof typeof emphasisStyle;
+  shape?: keyof typeof shapeStyle;
 };
 
 const DestructiveButton: React.FC<DestructiveButtonProps> = ({
@@ -10,10 +11,11 @@ const DestructiveButton: React.FC<DestructiveButtonProps> = ({
   children,
   size = 'medium',
   emphasis = 'bold',
+  shape = 'square',
 }) => {
   return (
     <button
-      className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]}`}
+      className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]} ${shapeStyle[shape]}`}
       onClick={onClick}
     >
       {children}
@@ -22,7 +24,7 @@ const DestructiveButton: React.FC<DestructiveButtonProps> = ({
 };
 
 const baseStyle =
-  'inline-flex items-center justify-center rounded-[2px] px-[16px] py-[12px] font-bold leading-none focus:border-white focus:bg-red-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
+  'inline-flex items-center justify-center px-[16px] py-[12px] font-bold leading-none focus:border-white focus:bg-red-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
 
 const sizeStyle = {
   small: 'min-h-[32px] px-[12px] py-[8px] text-sm',
@@ -35,6 +37,11 @@ const emphasisStyle = {
     'bg-transparent text-red-60 border border-solid border-red-60 hover:bg-red-20 active:bg-red-30 active:text-red-60 active:border-red-60',
   minimal:
     'bg-transparent text-red-60 border border-solid border-transparent hover:bg-red-20 active:bg-red-30 active:text-red-60 active:border-transparent',
+};
+
+const shapeStyle = {
+  square: 'rounded-[2px]',
+  circle: 'rounded-full',
 };
 
 export default DestructiveButton;

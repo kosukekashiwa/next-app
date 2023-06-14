@@ -4,6 +4,7 @@ type PrimaryNextLinkProps = Pick<LinkProps, 'href'> & {
   children: React.ReactNode;
   size?: keyof typeof sizeStyle;
   emphasis?: keyof typeof emphasisStyle;
+  shape?: keyof typeof shapeStyle;
 };
 
 const PrimaryNextLink: React.FC<PrimaryNextLinkProps> = ({
@@ -11,16 +12,20 @@ const PrimaryNextLink: React.FC<PrimaryNextLinkProps> = ({
   children,
   size = 'medium',
   emphasis = 'bold',
+  shape = 'square',
 }) => {
   return (
-    <Link href={href} className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]}`}>
+    <Link
+      href={href}
+      className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]} ${shapeStyle[shape]}`}
+    >
       {children}
     </Link>
   );
 };
 
 const baseStyle =
-  'inline-flex items-center justify-center rounded-[2px] font-bold leading-none focus:border-white focus:bg-blue-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
+  'inline-flex items-center justify-center font-bold leading-none focus:border-white focus:bg-blue-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
 
 const sizeStyle = {
   small: 'min-h-[32px] px-[12px] py-[8px] text-sm',
@@ -33,6 +38,11 @@ const emphasisStyle = {
     'bg-transparent text-blue-60 border border-solid border-blue-60 hover:bg-blue-20 active:bg-blue-30 active:text-blue-60 active:border-blue-60',
   minimal:
     'bg-transparent text-blue-60 border border-solid border-transparent hover:bg-blue-20 active:bg-blue-30 active:text-blue-60 active:border-transparent',
+};
+
+const shapeStyle = {
+  square: 'rounded-[2px]',
+  circle: 'rounded-full',
 };
 
 export default PrimaryNextLink;
