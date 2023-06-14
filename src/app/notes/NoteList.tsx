@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import useSWR from 'swr';
 import { Note, zNotes } from '@/src/app/notes/type';
 import { PencilIcon } from '@heroicons/react/24/outline';
@@ -45,11 +44,9 @@ const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
           <PencilIcon className=" h-4 w-4 text-white" />
         </PrimaryNextLink>
       </div>
-      <Link href={`/notes/${item.id}`} prefetch={false}>
-        <h3 className="mb-3 break-all text-lg font-semibold text-red-60 underline underline-offset-2 hover:text-red-80 md:text-xl">
-          {item.title}
-        </h3>
-      </Link>
+      <PrimaryNextLink href={`/notes/${item.id}`} prefetch={false} emphasis="minimal">
+        {item.title}
+      </PrimaryNextLink>
       <p className="break-all text-gray-100">{item.body}</p>
     </div>
   );
