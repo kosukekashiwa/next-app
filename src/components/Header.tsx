@@ -1,8 +1,5 @@
 import Link from 'next/link';
-import { Suspense } from 'react';
 import 'server-only';
-import { prisma } from '@/globals/db';
-import { zVersion } from '@/src/app/type';
 import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
 
 const Header: React.FC = () => {

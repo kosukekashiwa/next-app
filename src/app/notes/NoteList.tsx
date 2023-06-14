@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import useSWR from 'swr';
 import { Note, zNotes } from '@/src/app/notes/type';
+import { PencilIcon } from '@heroicons/react/24/outline';
+import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
 
 type NoteListProps = {
   initialState: Note[];
@@ -37,18 +39,11 @@ type NoteItemProps = {
 const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
   return (
     <div className="relative rounded-lg bg-gray-10 p-5 pt-8">
-      <Link href={`/notes/${item.id}/edit`} className="absolute -top-4 left-4">
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-red-60 text-white hover:bg-red-80">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            viewBox="0 0 25 25"
-            fill="currentColor"
-          >
-            <path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z" />
-          </svg>
-        </span>
-      </Link>
+      <div className="absolute -top-4 left-4">
+        <PrimaryNextLink href={`/notes/${item.id}/edit`} size="small">
+          <PencilIcon className=" h-4 w-4 text-white" />
+        </PrimaryNextLink>
+      </div>
       <Link href={`/notes/${item.id}`} prefetch={false}>
         <h3 className="mb-3 break-all text-lg font-semibold text-red-60 underline underline-offset-2 hover:text-red-80 md:text-xl">
           {item.title}
