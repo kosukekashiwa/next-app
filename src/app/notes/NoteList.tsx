@@ -40,7 +40,8 @@ const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
   return (
     <div className="relative rounded-lg bg-gray-10 p-5 pt-8">
       <div className="absolute -top-4 left-4">
-        <PrimaryNextLink href={`/notes/${item.id}/edit`} size="small">
+        {/* ToDo: アイコンボタン用のComponetを作成する。px, pyが同じ、かつ、もう少しアイコンが大きくても良い */}
+        <PrimaryNextLink href={`/notes/${item.id}/edit`} size="small" shape="circle">
           <PencilIcon className=" h-4 w-4 text-white" />
         </PrimaryNextLink>
       </div>
