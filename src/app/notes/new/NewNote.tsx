@@ -35,10 +35,7 @@ const NewNote: React.FC = () => {
   return (
     <div className="relative flex flex-col gap-2.5 rounded-lg bg-gray-10 p-5">
       <div className="sm:col-span-2">
-        <label htmlFor="title" className="mb-2 inline-block text-sm text-gray-90 sm:text-base">
-          Title
-        </label>
-        <Input name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <Input label="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
       </div>
 
       <div className="sm:col-span-2">
