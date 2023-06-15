@@ -1,10 +1,11 @@
 import Link, { LinkProps } from 'next/link';
 
-type PrimaryNextLinkProps = Pick<LinkProps, 'href' | 'prefetch'> & {
+export type PrimaryNextLinkProps = Pick<LinkProps, 'href' | 'prefetch'> & {
   children: React.ReactNode;
   size?: keyof typeof sizeStyle;
   emphasis?: keyof typeof emphasisStyle;
   shape?: keyof typeof shapeStyle;
+  expansionClass?: string;
 };
 
 const PrimaryNextLink: React.FC<PrimaryNextLinkProps> = ({
@@ -14,12 +15,13 @@ const PrimaryNextLink: React.FC<PrimaryNextLinkProps> = ({
   size = 'medium',
   emphasis = 'bold',
   shape = 'square',
+  expansionClass = '',
 }) => {
   return (
     <Link
       href={href}
       prefetch={prefetch}
-      className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]} ${shapeStyle[shape]}`}
+      className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]} ${shapeStyle[shape]} ${expansionClass}`}
     >
       {children}
     </Link>

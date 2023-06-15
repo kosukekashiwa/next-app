@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import { Note, zNotes } from '@/src/app/notes/type';
 import { PencilIcon } from '@heroicons/react/24/outline';
 import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
+import PrimaryNextLinkIcon from '@/src/components/buttons/PrimaryNextLinkIcon';
 
 type NoteListProps = {
   initialState: Note[];
@@ -39,10 +40,9 @@ const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
   return (
     <div className="relative rounded-lg bg-gray-10 p-5 pt-8">
       <div className="absolute -top-4 left-4">
-        {/* ToDo: アイコンボタン用のComponetを作成する。px, pyが同じ、かつ、もう少しアイコンが大きくても良い */}
-        <PrimaryNextLink href={`/notes/${item.id}/edit`} size="small" shape="circle">
+        <PrimaryNextLinkIcon href={`/notes/${item.id}/edit`} size="small" shape="circle">
           <PencilIcon className=" h-4 w-4 text-white" />
-        </PrimaryNextLink>
+        </PrimaryNextLinkIcon>
       </div>
       <PrimaryNextLink href={`/notes/${item.id}`} prefetch={false} emphasis="minimal">
         {item.title}
