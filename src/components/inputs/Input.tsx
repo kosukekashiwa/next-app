@@ -7,14 +7,14 @@ type InputProps = Pick<JSX.IntrinsicElements['input'], 'value' | 'onChange'> & {
 };
 
 const Input: React.FC<InputProps> = ({ value, onChange, label }) => {
-  const labelId = useId();
+  const inputId = useId();
 
   return (
     <Stack direction="column" alignItems="flexStart">
-      <Label.Root htmlFor={labelId}>{label}</Label.Root>
+      <Label.Root htmlFor={inputId}>{label}</Label.Root>
       <input
         value={value}
-        id={labelId}
+        id={inputId}
         onChange={onChange}
         className="w-full rounded-[2px] border border-gray-40 bg-white px-2 py-1 text-gray-90 hover:border-gray-60 focus:border-blue-60"
       />

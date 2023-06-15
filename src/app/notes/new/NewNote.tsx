@@ -39,10 +39,7 @@ const NewNote: React.FC = () => {
       </div>
 
       <div className="sm:col-span-2">
-        <label htmlFor="body" className="mb-2 inline-block text-sm text-gray-90 sm:text-base">
-          Body
-        </label>
-        <Textarea name="body" value={body} onChange={(e) => setBody(e.target.value)} />
+        <Textarea label="Body" value={body} onChange={(e) => setBody(e.target.value)} />
       </div>
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
