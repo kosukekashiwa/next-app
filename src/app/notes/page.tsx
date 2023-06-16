@@ -20,8 +20,8 @@ export default async function Page() {
   return (
     <main className="relative mx-2 sm:mx-4">
       <div className="absolute right-2 top-0 z-10 mr-2 inline-flex items-center">
-        <PrimaryNextLinkIcon href="/notes/new" shape="circle" size="small">
-          <PlusIcon className=" h-4 w-4 text-white" />
+        <PrimaryNextLinkIcon href="/notes/new" shape="circle" size="medium">
+          <PlusIcon className=" h-5 w-5 text-white" />
         </PrimaryNextLinkIcon>
       </div>
       <h2 className="mb-6 text-xs text-gray-50">List Notes</h2>

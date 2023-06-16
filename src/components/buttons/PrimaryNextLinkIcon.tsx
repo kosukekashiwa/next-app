@@ -1,33 +1,50 @@
-import PrimaryNextLink, { PrimaryNextLinkProps } from '@/src/components/buttons/PrimaryNextLink';
+import Link, { LinkProps } from 'next/link';
 
-type PrimaryNextLinkIconProps = Pick<
-  PrimaryNextLinkProps,
-  'href' | 'prefetch' | 'children' | 'size' | 'shape'
->;
+type PrimaryNextLinkIconProps = Pick<LinkProps, 'href' | 'prefetch'> & {
+  children: React.ReactNode;
+  size?: keyof typeof sizeStyle;
+  emphasis?: keyof typeof emphasisStyle;
+  shape?: keyof typeof shapeStyle;
+};
 
 const PrimaryNextLinkIcon: React.FC<PrimaryNextLinkIconProps> = ({
   href,
   prefetch,
   children,
   size = 'medium',
-  shape,
+  emphasis = 'bold',
+  shape = 'square',
 }) => {
   return (
-    <PrimaryNextLink
+    <Link
       href={href}
       prefetch={prefetch}
-      size={size}
-      shape={shape}
-      expansionClass={sizeStyle[size]}
+      className={`${baseStyle} ${sizeStyle[size]} ${emphasisStyle[emphasis]} ${shapeStyle[shape]}`}
     >
       {children}
-    </PrimaryNextLink>
+    </Link>
   );
 };
 
+const baseStyle =
+  'inline-flex items-center justify-center font-bold leading-none focus:border-white focus:bg-blue-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
+
 const sizeStyle = {
-  small: 'px-[8px] py-[8px]',
-  medium: 'px-[12px] py-[12px]',
+  small: 'min-h-[32px] px-[8px] py-[8px] text-sm',
+  medium: 'min-h-[42px] px-[12px] py-[12px] text-base',
+};
+
+const emphasisStyle = {
+  bold: 'bg-blue-60 text-white border border-solid border-blue-60 hover:bg-blue-70 active:border-blue-80 active:bg-blue-80',
+  subtle:
+    'bg-transparent text-blue-60 border border-solid border-blue-60 hover:bg-blue-20 active:bg-blue-30 active:text-blue-60 active:border-blue-60',
+  minimal:
+    'bg-transparent text-blue-60 border border-solid border-transparent hover:bg-blue-20 active:bg-blue-30 active:text-blue-60 active:border-transparent',
+};
+
+const shapeStyle = {
+  square: 'rounded-[2px]',
+  circle: 'rounded-full',
 };
 
 export default PrimaryNextLinkIcon;
