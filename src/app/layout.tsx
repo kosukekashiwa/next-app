@@ -32,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={`${NotoSansJP.className} flex h-screen flex-col`}>
         <Header />
         <main className="overflow-auto">
-          <div className="mx-2 sm:mx-4">{children}</div>
+          <div className="mx-2 py-8 sm:mx-4">{children}</div>
         </main>
         <footer className="mx-auto mt-auto">
           <small>© Copyright Co. Ltd. 2023</small>
