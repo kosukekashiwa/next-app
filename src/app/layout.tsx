@@ -29,10 +29,12 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
-      <body className={`${NotoSansJP.className} h-screen`}>
+      <body className={`${NotoSansJP.className} flex h-screen flex-col`}>
         <Header />
-        <main className="mx-2 sm:mx-4">{children}</main>
-        <footer className="mt-auto">
+        <main className="overflow-auto">
+          <div className="mx-2 sm:mx-4">{children}</div>
+        </main>
+        <footer className="mx-auto mt-auto">
           <small>© Copyright Co. Ltd. 2023</small>
         </footer>
       </body>
