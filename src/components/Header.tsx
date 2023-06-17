@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import 'server-only';
 import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
+import Stack from '@/src/components/layouts/Stack';
 
 const Header: React.FC = () => {
   const title = 'Awesome Note App';
@@ -28,9 +29,14 @@ const Header: React.FC = () => {
           </Link>
           {/* 画面幅が768px未満の場合は非表示 */}
           <nav className="hidden gap-12 md:flex">
-            <SecondaryNextLink href="/notes" emphasis="minimal">
-              Memo
-            </SecondaryNextLink>
+            <Stack space="0.5">
+              <SecondaryNextLink href="/notes" emphasis="minimal">
+                List
+              </SecondaryNextLink>
+              <SecondaryNextLink href="/notes/new" emphasis="minimal">
+                Add
+              </SecondaryNextLink>
+            </Stack>
           </nav>
         </header>
       </div>

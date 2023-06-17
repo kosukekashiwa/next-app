@@ -15,7 +15,7 @@ const Stack: React.FC<StackProps> = ({
   direction = 'row',
   alignItems = 'center',
   justifyContent = 'center',
-  space = '8',
+  space = '1',
 }) => {
   const childrenArray = React.Children.toArray(children).filter(Boolean);
 
@@ -53,15 +53,13 @@ const justifyContentStyle = {
 };
 const spaceStyle = {
   '0': 'gap-0',
-  '1': 'gap-[1px]',
-  '2': 'gap-[2px]',
-  '4': 'gap-[4px]',
-  '8': 'gap-[8px]',
-  '12': 'gap-[12px]',
-  '16': 'gap-[16px]',
-  '24': 'gap-[24px]',
-  '32': 'gap-[32px]',
-  '48': 'gap-[48px]',
+  '0.5': 'gap-[4px]',
+  '1': 'gap-[8px]',
+  '2': 'gap-[16px]',
+  '3': 'gap-[24px]',
+  '4': 'gap-[32px]',
+  '8': 'gap-[64px]',
+  '12': 'gap-[96px]',
 };
 
 export default Stack;
