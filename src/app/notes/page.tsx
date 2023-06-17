@@ -18,7 +18,7 @@ export default async function Page() {
   const notes = await getNotes();
 
   return (
-    <main className="relative mx-2 sm:mx-4">
+    <section className="relative">
       <div className="absolute right-2 top-0 z-10 mr-2 inline-flex items-center">
         <PrimaryNextLinkIcon href="/notes/new" shape="circle" size="medium">
           <PlusIcon className=" h-5 w-5 text-white" />
@@ -30,6 +30,6 @@ export default async function Page() {
           <NoteList initialState={notes} />
         </Suspense>
       </ErrorBoundary>
-    </main>
+    </section>
   );
 }

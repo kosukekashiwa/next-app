@@ -7,7 +7,7 @@ export const metadata = {
 
 export default async function Page() {
   return (
-    <main className="mx-2 sm:mx-4">
+    <section>
       <Link
         href={`/notes`}
         className="text-s inline-block rounded-lg font-semibold text-gray-60 outline-none ring-red-40 transition duration-100 hover:text-red-60 focus-visible:ring active:text-red-70 md:text-base"
@@ -16,6 +16,6 @@ export default async function Page() {
       </Link>
       <h2 className="my-4 text-xs text-gray-50">New Note</h2>
       <NewNote />
-    </main>
+    </section>
   );
 }

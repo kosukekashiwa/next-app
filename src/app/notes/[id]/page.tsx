@@ -15,12 +15,12 @@ export default async function Page({ params }: { params: { id: string } }) {
   const note = await getNote(params.id);
 
   return (
-    <main className="mx-2 sm:mx-4">
+    <section>
       <SecondaryNextLink href="/notes" emphasis="minimal">
         ← back
       </SecondaryNextLink>
       <h2 className="my-4 text-xs text-gray-50">View Note</h2>
       <Note item={note} />
-    </main>
+    </section>
   );
 }
