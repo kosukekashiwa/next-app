@@ -2,7 +2,7 @@ import { Prisma, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function main(): Promise<void> {
   // delete all
   await prisma.note.deleteMany();
   // seeding
@@ -36,6 +36,7 @@ main()
     await prisma.$disconnect();
   })
   .catch(async (e) => {
+    // eslint-disable-next-line no-console
     console.error(e);
     await prisma.$disconnect();
     process.exit(1);

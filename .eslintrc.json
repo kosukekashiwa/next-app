@@ -3,13 +3,18 @@
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "next/core-web-vitals",
-    "plugin:react-hooks/recommended",
-    "eslint:recommended"
+    "plugin:react-hooks/recommended"
+    // "eslint:recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "react-hooks"],
+  "env": {
+    "browser": true
+  },
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "warn",
     "@typescript-eslint/no-explicit-any": ["error"],
+    "no-console": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }
