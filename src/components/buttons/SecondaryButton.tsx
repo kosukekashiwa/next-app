@@ -24,7 +24,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
 };
 
 const baseStyle =
-  'inline-flex items-center justify-center font-bold leading-none text-gray-90 focus:border-white focus:bg-gray-30 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
+  'inline-flex items-center justify-center font-bold leading-none text-gray-90 focus:border-white focus:bg-gray-30 focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
 
 const sizeStyle = {
   small: 'min-h-[32px] px-[12px] py-[8px] text-sm',
@@ -32,11 +32,11 @@ const sizeStyle = {
 };
 
 const emphasisStyle = {
-  bold: 'bg-gray-30 border border-solid border-blue-60 hover:bg-gray-40 active:border-gray-50 active:bg-blue-80',
+  bold: 'bg-gray-30 border border-solid border-gray-30 hover:bg-gray-40 active:border-gray-50 active:bg-gray-40',
   subtle:
-    'bg-transparent border border-solid border-gray-60 hover:bg-gray-20 active:bg-gray-30 active:border-blue-60',
+    'bg-transparent border border-solid border-gray-40 hover:bg-gray-20 active:bg-gray-30 active:border-gray-40',
   minimal:
-    'bg-transparent border border-solid border-transparent hover:bg-blue-20 active:bg-blue-30 active:border-transparent',
+    'bg-transparent border border-solid border-transparent hover:bg-gray-20 active:bg-gray-30 active:border-transparent',
 };
 
 const shapeStyle = {

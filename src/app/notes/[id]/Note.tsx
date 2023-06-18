@@ -4,6 +4,8 @@ import { useCallback } from 'react';
 import { Note } from '../type';
 import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
 import DestructiveButton from '@/src/components/buttons/DestructiveButton';
+import Dialog from '@/src/components/feedbakcs/Dialog';
+import SecondaryButton from '@/src/components/buttons/SecondaryButton';
 
 type NoteProps = {
   item: Note;
@@ -21,7 +23,7 @@ const Note: React.FC<NoteProps> = ({ item }) => {
     });
 
     if (res.ok) {
-      alert('Note deleted');
+      // alert('Note deleted');
       router.push(`/notes`);
       router.refresh();
     } else {
@@ -36,9 +38,24 @@ const Note: React.FC<NoteProps> = ({ item }) => {
 
       <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-end">
         <PrimaryNextLink href={`/notes/${item.id}/edit`}>Edit</PrimaryNextLink>
-        <DestructiveButton onClick={handleDeleteButtonClick} emphasis="subtle">
-          Delete
-        </DestructiveButton>
+        <Dialog
+          description="メモを削除します。よろしいですか？"
+          openButton={
+            // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/explicit-function-return-type
+            <DestructiveButton onClick={() => {}} emphasis="subtle">
+              Delete
+            </DestructiveButton>
+          }
+          actions={[
+            // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/explicit-function-return-type
+            <SecondaryButton key="1" onClick={() => {}}>
+              Cancel
+            </SecondaryButton>,
+            <DestructiveButton key="2" onClick={handleDeleteButtonClick}>
+              Delete
+            </DestructiveButton>,
+          ]}
+        />
       </div>
     </div>
   );
