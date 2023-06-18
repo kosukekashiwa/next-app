@@ -30,8 +30,8 @@ const baseStyle =
   'inline-flex items-center justify-center font-bold leading-none focus:border-white focus:bg-blue-60 focus:text-white focus:outline-1 focus:outline-offset-2 focus:outline-blue-60';
 
 const sizeStyle = {
-  small: 'min-h-[32px] px-[8px] py-[8px] text-sm',
-  medium: 'min-h-[42px] px-[12px] py-[12px] text-base',
+  small: 'h-[32px] w-[32px] px-[8px] py-[8px] text-sm',
+  medium: 'h-[42px] w-[42px] px-[8px] py-[8px] text-base',
 };
 
 const emphasisStyle = {

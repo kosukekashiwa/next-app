@@ -41,7 +41,7 @@ const NoteItem: React.FC<NoteItemProps> = ({ item }) => {
     <div className="relative rounded-lg bg-gray-10 p-5 pt-8">
       <div className="absolute -top-4 left-4">
         <PrimaryNextLinkIcon href={`/notes/${item.id}/edit`} size="small" shape="circle">
-          <PencilIcon className=" h-4 w-4 text-white" />
+          <PencilIcon className="text-white" />
         </PrimaryNextLinkIcon>
       </div>
       <PrimaryNextLink href={`/notes/${item.id}`} prefetch={false} emphasis="minimal">

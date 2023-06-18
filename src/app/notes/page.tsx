@@ -21,7 +21,7 @@ export default async function Page() {
     <section className="relative">
       <div className="absolute right-2 top-0 z-10 mr-2 inline-flex items-center">
         <PrimaryNextLinkIcon href="/notes/new" shape="circle" size="medium">
-          <PlusIcon className=" h-5 w-5 text-white" />
+          <PlusIcon className="text-white" />
         </PrimaryNextLinkIcon>
       </div>
       <h2 className="mb-6 text-xs text-gray-50">List Notes</h2>
