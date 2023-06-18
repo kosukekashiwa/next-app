@@ -15,7 +15,11 @@ export async function GET(_req: NextRequest, { params }: { params: { id: string 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   const data = await req.json();
   const parcedData = zUpsertNote.parse(data);
-  const note = await prisma.note.update({
+  // const note = await prisma.note.update({
+  //   where: { id: Number(params.id) },
+  //   data: { title: parcedData.title, body: parcedData.body },
+  // });
+  await prisma.note.update({
     where: { id: Number(params.id) },
     data: { title: parcedData.title, body: parcedData.body },
   });
@@ -23,7 +27,10 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-  const note = await prisma.note.delete({
+  // const note = await prisma.note.delete({
+  //   where: { id: Number(params.id) },
+  // });
+  await prisma.note.delete({
     where: { id: Number(params.id) },
   });
   return new NextResponse(null, { status: 204 });
