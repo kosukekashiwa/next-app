@@ -2,8 +2,8 @@
 import useSWR from 'swr';
 import { Note, zNotes } from '@/src/app/notes/type';
 import { PencilIcon } from '@heroicons/react/24/outline';
-import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
-import PrimaryNextLinkIcon from '@/src/components/buttons/PrimaryNextLinkIcon';
+import PrimaryNextLink from '@/src/ui/buttons/PrimaryNextLink';
+import PrimaryNextLinkIcon from '@/src/ui/buttons/PrimaryNextLinkIcon';
 
 type NoteListProps = {
   initialState: Note[];

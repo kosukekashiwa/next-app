@@ -1,6 +1,6 @@
 import * as RadixDialog from '@radix-ui/react-dialog';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import Stack from '@/src/components/layouts/Stack';
+import Stack from '@/src/ui/layouts/Stack';
 
 type DialogProps = {
   openButton: React.ReactNode;

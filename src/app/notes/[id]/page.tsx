@@ -1,7 +1,7 @@
 import { Metadata } from 'next/types';
 import { getNote } from './getNote';
 import Note from './Note';
-import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
+import SecondaryNextLink from '@/src/ui/buttons/SecondaryNextLink';
 
 export const revalidate = 0;
 

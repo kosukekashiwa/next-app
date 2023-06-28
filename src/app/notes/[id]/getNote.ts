@@ -1,4 +1,4 @@
-import { apiUrl } from '@/src/constants/api';
+import { apiUrl } from '@/src/lib/api';
 import 'server-only';
 import { zNote } from '../type';
 

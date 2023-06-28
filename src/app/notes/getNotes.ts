@@ -1,4 +1,4 @@
-import { apiUrl } from '@/src/constants/api';
+import { apiUrl } from '@/src/lib/api';
 import { zNotes } from './type';
 
 export const getNotes = async (): Promise<

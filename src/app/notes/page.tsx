@@ -1,12 +1,12 @@
-import ErrorBoundary from '@/src/components/ErrorBoundary';
-import FetchError from '@/src/components/FetchError';
-import Loading from '@/src/components/Loading';
+import ErrorBoundary from '@/src/ui/ErrorBoundary';
+import FetchError from '@/src/ui/FetchError';
+import Loading from '@/src/ui/Loading';
 import { Suspense } from 'react';
 import 'server-only';
 import NoteList from './NoteList';
 import { getNotes } from '@/src/app/notes/getNotes';
 import { PlusIcon } from '@heroicons/react/24/outline';
-import PrimaryNextLinkIcon from '@/src/components/buttons/PrimaryNextLinkIcon';
+import PrimaryNextLinkIcon from '@/src/ui/buttons/PrimaryNextLinkIcon';
 
 export const revalidate = 0;
 

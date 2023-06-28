@@ -1,8 +1,8 @@
 'use client';
-import PrimaryButton from '@/src/components/buttons/PrimaryButton';
-import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
-import Input from '@/src/components/inputs/Input';
-import Textarea from '@/src/components/inputs/Textarea';
+import PrimaryButton from '@/src/ui/buttons/PrimaryButton';
+import SecondaryNextLink from '@/src/ui/buttons/SecondaryNextLink';
+import Input from '@/src/ui/inputs/Input';
+import Textarea from '@/src/ui/inputs/Textarea';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { z } from 'zod';

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import 'server-only';
-import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
-import Stack from '@/src/components/layouts/Stack';
+import SecondaryNextLink from '@/src/ui/buttons/SecondaryNextLink';
+import Stack from '@/src/ui/layouts/Stack';
 
 const Header: React.FC = () => {
   const title = 'Awesome Note App';

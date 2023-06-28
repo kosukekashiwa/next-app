@@ -1,5 +1,5 @@
-import './globals.css';
-import Header from '@/src/components/Header';
+import './styles/globals.css';
+import Header from '@/src/ui/Header';
 import { Noto_Sans_JP } from 'next/font/google';
 
 /** <head>部の設定. */

@@ -2,10 +2,10 @@
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { Note } from '../type';
-import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
-import DestructiveButton from '@/src/components/buttons/DestructiveButton';
-import Dialog from '@/src/components/feedbakcs/Dialog';
-import SecondaryButton from '@/src/components/buttons/SecondaryButton';
+import PrimaryNextLink from '@/src/ui/buttons/PrimaryNextLink';
+import DestructiveButton from '@/src/ui/buttons/DestructiveButton';
+import Dialog from '@/src/ui/feedbakcs/Dialog';
+import SecondaryButton from '@/src/ui/buttons/SecondaryButton';
 
 type NoteProps = {
   item: Note;

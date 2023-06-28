@@ -1,4 +1,4 @@
-import Stack from '@/src/components/layouts/Stack';
+import Stack from '@/src/ui/layouts/Stack';
 import * as Label from '@radix-ui/react-label';
 import { useId } from 'react';
 

@@ -1,5 +1,5 @@
-import PrimaryNextLink from '@/src/components/buttons/PrimaryNextLink';
-import SecondaryNextLink from '@/src/components/buttons/SecondaryNextLink';
+import PrimaryNextLink from '@/src/ui/buttons/PrimaryNextLink';
+import SecondaryNextLink from '@/src/ui/buttons/SecondaryNextLink';
 
 export default function Home() {
   return (
